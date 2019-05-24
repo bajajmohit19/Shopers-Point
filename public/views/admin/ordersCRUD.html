@@ -1,0 +1,27 @@
+<div>
+    <h1>Orders</h1>
+    <div id="allOrders">
+        <table class="table table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Ordered by</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Operations</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat='order in orders'>
+                    <td id="orderid">{{order._id}}</td>
+                    <td id="pname">{{order.product}}</td>
+                    <td id="uname">{{order.user}}</td>
+                    <td id="orderquantity">{{order.quantity}}</td>
+                    <td id="orderprice">{{order.price}}</td>
+                    <td id="op">
+                        <a href="" ng-click="deleteOrder($event)"><span class="fas fa-trash mr-1"></span><span>Delete</span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div id="profile" class="container text-center mt-5">
+    <div class="profilePic">
+        <img ng-if="user.gender=='male'" src="images/male.png" alt="" >
+        <img ng-if="user.gender=='female'" src="images/female.png" alt="" >
+        <span class="editBtn"><button id="username" ng-click="edit()" data-toggle="modal" data-target="#editProfile">Edit</button></span>
+    </div>
+    <div class="bio">
+        <div class="bioChild">
+            <label style="border-top:1px solid rgba(128, 128, 128,0.5);">Username :</label>
+            <input class="inputProfile" type="text" placeholder="{{user.username}}" style="border-top:1px solid rgba(128, 128, 128,0.5);" disabled>
+        </div>
+        <div class="bioChild">
+            <label>Userid :</label>
+            <input class="inputProfile" type="text" placeholder="{{user.userid}}" disabled>
+        </div>
+        <div class="bioChild">
+            <label>Gender :</label>
+            <select disabled>
+                <option ng-if="user.gender == 'male'" value="male">Male</option>
+                <option ng-if="user.gender == 'female'" value="female">Female</option>
+            </select>
+        </div>
+        <div class="bioChild">
+            <label>Email :</label>
+            <input class="inputProfile" type="email" placeholder="{{user.email}}" disabled>
+        </div>
+        <div class="bioChild">
+            <label>Mobile no. :</label>
+            <input class="inputProfile" type="text" pattern="[0-9]{10}" placeholder="{{user.mobileno}}" disabled>
+        </div>
+        <div class="bioChild">
+            <label>Password :</label>
+            <div class="inputProfile"><input type="password" placeholder="********" disabled><i data-toggle="modal" data-target="#changePassword" class="pwdedit far fa-edit"></i></div>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="forms.editform" novalidate>
+                        <div class="editInputBox">
+                            <input ng-model="editInfo.username" class="form-control mb-3" type="text" placeholder="Username" required>
+                        </div>
+                        <div class="editInputBox">
+                            <select ng-model="editInfo.gender" class="form-control mb-3">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="editInputBox">
+                            <input ng-model="editInfo.email" class="form-control mb-3" type="email" placeholder="Email" required>
+                        </div>
+                        <div class="productInputBox">
+                            <input ng-model="editInfo.mobileno" class="form-control mb-3" type="text" pattern="[0-9]{10}" placeholder="Phone No." required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-click="editProfile()" data-dismiss="modal" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Password Modal-->
+    <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="forms.pwdform" novalidate>
+                        <div class="editInputBox">
+                            <input ng-model="changepwd.currentpassword" class="form-control mb-3" type="password" placeholder="Current password" required>
+                        </div>
+                        <div class="editInputBox">
+                            <input ng-model="changepwd.newpassword" class="form-control mb-3" type="password" placeholder="New password" required>
+                        </div>
+                        <div class="editInputBox">
+                            <input ng-model="changepwd.newpassword2" ng-change="doCheck()" class="form-control mb-3" type="password" placeholder="Confirm new password" required>
+                        </div>
+                        <div ng-if="pwd==false">New password not match</div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" ng-click="pwdedit()" data-dismiss="modal" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

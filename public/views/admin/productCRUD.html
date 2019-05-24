@@ -1,0 +1,116 @@
+<div>
+    <h1>Products</h1>
+    <div>{{notifications.popup}}</div>
+    <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#addProduct">
+        Add
+    </button>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="forms.uploadform" enctype="multipart/form-data" novalidate>
+                        <div class="productInputBox">
+                            <input ng-model="product.name" class="form-control mb-3" type="text" placeholder="Product Name" name="productname" required>
+                        </div>
+                        <div class="productInputBox">
+                            <textarea ng-model="product.description" class="form-control mb-3" placeholder="Description" name="productdesc" required></textarea>
+                        </div>
+                        <div class="productInputBox">
+                            <input ng-model="product.price" class="form-control mb-3" type="number" placeholder="Price" name="productprice" required>
+                        </div>
+                        <div class="productInputBox">
+                            <input ng-model="product.quantity" class="form-control mb-3" type="number" placeholder="Quantity" name="productquantity" required>
+                        </div>
+                        <div class="productInputBox">
+                            <input type="file" ngf-select ng-model="forms.file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="10MB" ngf-min-height="300" ngf-resize="{width: 300, height: 300}" required></input>
+                            <!-- <div class="button" ngf-select="upload($file)">Upload on file select</div> -->
+                            <img class="mt-2" ngf-thumbnail="forms.file">
+                            <!-- <button type="submit" ng-click="fileUpload()">Upload</button> -->
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" ng-click="addProduct()" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                    <button type="button" ng-click="clear()" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="forms.updateform" enctype="multipart/form-data" >
+                        <div class="productInputBox">
+                            <input id="test" ng-model="editable.name" class="form-control mb-3" type="text" placeholder="Product Name" name="productname" value={{editable.name}} required>
+                        </div>
+                        <div class="productInputBox">
+                            <textarea ng-model="editable.description" class="form-control mb-3" placeholder="Description" name="productdesc" required></textarea>
+                        </div>
+                        <div class="productInputBox">
+                            <input ng-model="editable.price" class="form-control mb-3" type="number" placeholder="Price" name="productprice" value={{editable.price}} required>
+                        </div>
+                        <div class="productInputBox">
+                            <input ng-model="editable.quantity" class="form-control mb-3" type="number" placeholder="Quantity" name="productquantity" value={{(editable.quantity)}} required>
+                        </div>
+                        <div class="productInputBox">
+                            <input type="file" ngf-select ng-model="forms.file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="10MB" ngf-min-height="300" ngf-resize="{width: 300, height: 300}" required></input>
+                            <!-- <div class="button" ngf-select="upload($file)">Upload on file select</div> -->
+                            <img class="mt-2" ngf-thumbnail="forms.file">
+                            <!-- <button type="submit" ng-click="fileUpload()">Upload</button> -->
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" ng-click="updateProduct()" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="allProducts">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='product in products'>
+                    <td id="_id">{{product._id}}</td>
+                    <td id="name">{{product.name}}</td>
+                    <td id="description">{{product.description}}</td>
+                    <td id="price">{{product.price}}</td>
+                    <td id="quantity">{{product.quantity}}</td>
+                    <td id="img"><img ng-src="data:image/JPEG;base64,{{product.img}}" alt="" width="30" height="30"></td>
+                    <td id="op">
+                        <a href="" class="mr-2" ng-click="editProduct($event)" data-toggle="modal" data-target="#editProduct"><span class="far fa-edit mr-1"></span><span>Edit</span></a>
+                        <a href="" ng-click="deleteProduct($event)"><span class="fas fa-trash mr-1"></span><span>Delete</span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

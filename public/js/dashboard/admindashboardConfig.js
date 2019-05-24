@@ -1,0 +1,9 @@
+dashboardModule.constant('FETCH_PRODUCTS',baseUrl+'/fetchproducts');
+dashboardModule.constant('FETCH_ORDERS',baseUrl+'/fetchorders');
+dashboardModule.constant('FETCH_USERS',baseUrl+'/fetchusers');
+dashboardModule.constant('FETCH_IDS',baseUrl+'/fetchids');
+dashboardModule.constant('ADD_PRODUCT',baseUrl+'/addproduct');
+dashboardModule.constant('UPDATE_PRODUCT',baseUrl+'/updateproduct');
+dashboardModule.constant('DELETE_PRODUCT',baseUrl+'/deleteproduct');
+dashboardModule.constant('DELETE_ORDER',baseUrl+'/deleteorder');
+dashboardModule.constant('FETCH_IMAGE',baseUrl+'/fetchimage');

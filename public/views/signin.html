@@ -1,0 +1,23 @@
+<div class="signin">
+    <div class="reg">
+        <hr class="topBorder">
+        <h1 class="text-left">LOG IN</h1>
+        <div class="inputBox">
+            <input class="loginInput" ng-model="user.userid" type="text" placeholder="Username" name="username">
+            <span class="icons">&#xf007;</span>
+        </div>
+        <div class="inputBox">
+            <input class="loginInput" ng-model="user.pwd" type="password" placeholder="Password" name="password">
+            <span class="icons">&#xf023;</span>
+        </div>
+        <div class="notification mt-3">
+            <div ng-if="data.data && !data.data.doc && !isErr" class="alert m-2">Invalid username or password</div>
+        </div>
+        <!-- <div ng-if="data.data.doc && !isErr" class="text-white m-2">Login Successfull</div> -->
+        <div class="text-center m-3">
+            <button ng-click="doLogin()" class="submitBtn m-2">Login</button>
+            <div><a ng-href="#/">New here? Signup</a></div>
+        </div>
+        <hr class="bottomBorder">
+    </div>
+</div>

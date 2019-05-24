@@ -1,0 +1,345 @@
+nav{
+    z-index: 2;
+    position:sticky !important;
+    top:0;
+}
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    background: rgb(50, 87, 248) !important;
+}
+.nav-link{
+    color:white !important;
+}
+.reg{
+    background: rgba(0, 0, 0, 0.6);
+    position: relative;
+    top:20px;
+    left:50px;
+    color:white;
+    max-width:450px;
+    text-align: center;
+    padding:3vh 2vw;
+}
+.reg hr{
+    position:absolute;
+    height:2px;
+    left:0;
+    width:100%;
+    background: -webkit-radial-gradient( green 20%, orange , red , blue , yellow );
+}
+.topBorder{
+    top:-2.5vh;
+}
+/* .reg .inputBox input{
+    color:white;
+}
+.reg .inputBox select{
+    color:white;
+}
+.reg .inputBox input::placeholder{
+    color:white;
+} */
+.signin{
+    position: relative;
+    top:20vh;
+}
+.icons{
+    position: absolute;
+    left:25px;
+    color:white;
+    font-family:Arial,FontAwesome;
+    padding:8px 7px 0 30px;
+    font-size: 1.1em;
+    pointer-events: none;
+    transition: all 0.4s;
+}
+.inputBox{
+    position:relative;
+    padding-top:30px;
+}
+.input{
+    width:300px;
+    outline: none;
+    background: transparent;
+    padding-left:5px;
+    margin:5px;
+    border:none;
+    font-size:1.1em;
+    border-bottom: 1px grey solid;
+    transition : all 0.4s ease;
+    color:white;
+}
+.input option{
+    color:white;
+    background: grey;
+    border:none;
+}
+.loginInput{
+    color:white;
+    width:300px;
+    outline: none;
+    background: transparent;
+    margin:5px;
+    border:none;
+    padding-left:35px; 
+    font-size:1.1em;
+    border-bottom: 1px grey solid;
+    transition : all 0.4s ease;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color:white;
+  background: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.loginInput:focus, .input:focus{
+    border-bottom: 1px white solid;
+    padding-left:5px;
+}
+.loginInput:focus::placeholder,.input:focus::placeholder{
+    opacity: 0;
+}
+.loginInput:focus ~ .icons{
+    transform:translateY(-80%);
+}
+.loginInput::placeholder,.input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+  
+.loginInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+  
+.loginInput::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+.submitBtn{
+    outline:none;
+    border-radius:40px;
+    font-size: 1.2em;
+    border:none;
+    padding:0.5rem 1.2rem;
+}
+.submitBtn:focus{
+    outline:none;
+}
+.red{
+    color:red;
+}
+.submitBtn:hover{
+    background: linear-gradient(rgb(33, 250, 80), rgb(33, 170, 250));
+}
+.authDivider{
+    color:lightgrey;
+    display:inline-block;
+    width:100%;
+    text-align: center;
+    margin-top: 0;
+}
+.notification div{
+    position:fixed;
+    padding:5px;
+    color:white;
+    top:0;
+    right:0;
+}
+.success{
+    background:green;
+}
+.alert{
+    background:red;
+}
+.green{
+    color:green;
+}
+.red{
+    color:red;
+}
+.left-auth-divider{
+    position: relative;
+    top:15px;
+    width:45%;
+    border: 0.5px solid white;
+    border-radius: 50%;
+    float: left;
+    margin: 0;
+}
+.right-auth-divider{
+    position: relative;
+    bottom: 10px;
+    width:45%;
+    margin:0;
+    border: 0.5px solid white;
+    border-radius: 50% !important;
+    left:54%;
+}
+
+@media only screen and (max-width:700px){
+    .signin{
+        width:100%;
+        text-align: center;
+    }
+    .icons{
+        left:0px;
+        padding-left:17px;
+    }
+    .backImg{
+        position: static !important;
+        display:block !important;
+    }
+    .content{
+        text-align: center;
+    }
+    .content p{
+        transform: translateY(0px) !important;
+    }
+    .c1{
+        padding:10px !important;
+    }
+    .c2{
+        padding:10px !important;
+    }
+    .i1{
+        transform: translateY(0px) !important;
+    }
+    .i2{
+        transform: translateY(0px) !important;
+    }
+}
+
+/*Homepage css*/
+#homepage{
+    width:100vw;
+    height: 100vh;
+    background: url('../images/ss3.jpg');
+    background-size: cover;
+}
+#homepage section{
+    position: absolute;
+    font-size:5rem;
+    color: white;
+    font-weight: bolder;
+    width:450px;
+    left:50vw;
+    top:3rem;
+}
+#homepage section span{
+    padding:5px;
+    background: rgba(0, 0, 0, 0.6);
+}
+#homepage section hr{
+    background: white;
+    height:1px;
+    border-radius:100%;
+    transform: rotateZ(90deg) translate(55%,18vw);
+}
+.mon{
+    color:green;
+}
+.exp{
+    color:orange
+}
+.ang{
+    color:red;
+}
+.node{
+    color:rgb(78, 238, 78);
+}
+.aboutbreak{
+    padding:0;
+    margin:0;
+    height:1px;
+}
+#about{
+    position: relative;
+    width:100vw;
+    background:url('../images/homepage-background.jpg');
+    background-size: cover;
+    color:white;
+}
+.backImg{
+    position: absolute;
+    top:50vh;
+}
+.c1{
+    padding:15% 5vw 20px 45vw;
+}
+.c2{
+    padding:15% 55vw 20px 5vw;
+}
+.i1{
+    left:10px;
+    transform: translateY(-50%);
+}
+.i2{
+    right:10px;
+    transform: translateY(-50%);
+}
+.content{
+    position: relative;
+    width:100%;
+    height:100vh !important;
+    padding-top:50vh;
+    font-size:3.7em;
+    font-weight: bolder;
+}
+.content p{
+    transform: translateY(-50%);
+}
+@media only screen and (max-width:1270px){
+    #homepage section hr{
+        transform: rotateZ(90deg) translate(55%,22.3vw);
+    }
+    .backImg img{
+        width:400px;
+    }
+    
+}
+@media only screen and (max-width:900px){
+    .backImg img{
+        width:300px;
+    }
+    .content{
+        font-size:3em;
+    }
+}
+@media only screen and (max-width:1000px){
+    #homepage section hr{
+        display: none;
+    }
+    
+    #homepage section{
+        text-align: center;
+        position: static;
+        font-size:4rem;
+        color: white;
+        font-weight: bolder;
+        width:100vw;
+        padding:5px;
+        padding-top:100px;
+        height:100vh;
+    }
+    #homepage{
+        background-size: cover;
+    }
+    .reg{
+        background: rgba(0, 0, 0, 0.6);
+        position: relative;
+        top:0px;
+        left:0px;
+        color:white;
+        max-width:100%;
+        text-align: center;
+        padding:3vh 2vw;
+    }
+}

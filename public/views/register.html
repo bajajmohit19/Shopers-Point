@@ -1,0 +1,37 @@
+<div>
+    <form class="reg">
+        <hr class="topBorder">
+        <h1 class="text-center">REGISTER</h1>
+        <div class="inputBox">
+            <input ng-model="user.userid" class="input" type="text" placeholder="Userid" name="userid" required>
+        </div>
+        <div class="inputBox">
+            <input ng-model="user.username" class="input" type="text" placeholder="Username" name="username" required>
+        </div>
+        <div class="inputBox">
+            <select name="gender" ng-model="user.gender" class="input" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="inputBox">
+            <input ng-model="user.mobileno" class="input" type="text" title="Please enter 10 digit valid number" pattern="[0-9]{10}" placeholder="Phone No." name="mobileno" required>
+        </div>
+        <div class="inputBox">
+            <input ng-model="user.email" class="input" type="text" placeholder="Email" name="email" required>
+        </div>
+        <div class="inputBox">
+            <input ng-model="user.pwd" class="input" type="password" placeholder="Password" name="password" required>
+        </div>
+        <div class="notification mt-3">
+            <div ng-if="reg.data && !isErr" class="success animated slidInRight m-2">User Registered Successfully</div>
+            <div ng-if="err.data.code==11 && isErr" class="alert animated slidInRight m-2">User already exist</div>
+            <div ng-if="notification" class="animated slidInRight m-2">{{notification}}</div>
+        </div>
+        <div class="mt-2">
+            <button ng-click="doRegister()" class="submitBtn m-2">Register</button>
+            <div><a ng-href="#/signin">Already have a account?</a></div>
+        </div>
+        <hr class="bottomBorder">
+    </form>
+</div>

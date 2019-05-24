@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Hi+Melody|Jua" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/userdashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="js/userapp.js"></script>
+    <script src="js/utils/storageservice.js"></script>
+    <script src="js/utils/userHttpInterceptor.js"></script>
+    <script src="js/dashboard/userdashboardmodule.js"></script>
+    <script src="js/dashboard/userdashboardconfig.js"></script>
+    <script src="js/dashboard/factories/userdashboardfactory.js"></script>
+    <script src="js/dashboard/controllers/userdashboardcontroller.js"></script>
+    
+</head>
+<body ng-app='userdashboardmodule' ng-controller='userdashboardctrl'>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="navbar-brand"><img src="images/logo.png" width="30px" alt="Shopers"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                    <li class="user">
+                        <a class="nav-link" ng-href="#/profile">{{user.username}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn nav-link" ng-click="signout()">Sign Out</button>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+    <ng-view></ng-view>
+    <footer>
+        <div class="social-media-links text-center">
+            <h3 class="text-center">Connect with us on social media</h3>
+            <div><a style="color:white" href="https://www.facebook.com/profile.php?id=100011453732637" target="_blank" class="fab fa-facebook"></a></div>
+            <div><a style="color:white" href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a></div>
+            <div><a style="color:white" href="https://www.twitter.com" target="_blank" class="fab fa-twitter"></a></div>
+            <div><a style="color:white" href="https://www.linkedin.com/in/abhishek-sharma-a65366142/" target="_blank" class="fab fa-linkedin"></a></div>
+            <div><a style="color:white" href="https://github.com/Abhishekop722" target="_blank" class="fab fa-github"></a></div>
+        </div>
+        <div class="copyright text-center">
+            <i style="font-family:Jua">Parimate</i> &copy 2018. All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>

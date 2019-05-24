@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="js/admin/adminmodule.js"></script>
+    <script src="js/admin/factories/adminfactory.js"></script>
+    <script src="js/admin/controllers/admincontroller.js"></script>
+</head>
+<body ng-app='adminmodule' ng-controller="adminctrl">
+    <!-- <div><img src="images/homebg.jpg" width="100%" height="100%" alt=""></div> -->
+    <div class="signin">
+        <div class="wrapper">
+            <h1 class="text-center">ADMIN LOG IN</h1>
+            <div class="inputBox">
+                <input class="loginInput" ng-model="admin.userid" type="text" placeholder="Username" name="username">
+                <span class="icons">&#xf007;</span>
+            </div>
+            <div class="inputBox">
+                <input class="loginInput" ng-model="admin.pwd" type="password" placeholder="Password" name="password">
+                <span class="icons">&#xf023;</span>
+            </div>
+            <div ng-if="data.data && !data.data.doc && !isErr" class="m-2">Invalid username or password</div>
+            <!-- <div ng-if="data.data.doc && !isErr" class="text-white m-2">Login Successfull</div> -->
+            <div ng-if="message" class="">{{message}}</div>
+            <div class="text-center m-3">
+                <button ng-click="doLogin()" class="submitBtn m-2">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

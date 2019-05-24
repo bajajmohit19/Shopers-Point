@@ -1,0 +1,17 @@
+<div>
+    <h1>Customers</h1>
+    <div id="allCustomers">
+        <table class="table table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>User</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat='customer in customers'>
+                    <td id="userid">{{customer._id}}</td>
+                    <td id="username">{{customer.userid}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

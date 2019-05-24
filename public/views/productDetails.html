@@ -1,0 +1,13 @@
+<div class="details">
+    <div class="detailsimg">
+        <span class="offer">on offer</span>
+        <img ng-src="{{productDetails.img}}" alt="{{product.description}}">
+    </div>
+    <div class="productBio">
+        <h1>{{productDetails.pname}}</h1>
+        <span class="price green">&#8377;{{productDetails.price}}</span>
+        <p class="desc">{{productDetails.description}}</p>
+        <button ng-if="productDetails.quantity>0" class="btn btn-primary" ng-click="buy()">Buy now</button>
+        <label for="" class="red" ng-if="productDetails.quantity <= 0">Out of stock</label>
+    </div>
+</div>

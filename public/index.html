@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
+    <script src="js/user/usermodule.js"></script>
+    <script src="js/user/userconfig.js"></script>
+    <script src="js/user/factories/userfactory.js"></script>
+    <script src="js/user/controllers/usercontroller.js"></script>
+</head>
+<body ng-app='usermodule' ng-controller="userctrl">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand"><img src="images/logo.png" width="30px" alt="Shopers"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-href="#/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-href="#/signin">Sign In</a>
+                    </li>
+                </ul>
+        </div>
+    </nav> -->
+    <!-- <div><img src="images/homebg.jpg" width="100%" height="100%" alt=""></div> -->
+    <div id="homepage">
+        <section>
+            <hr>
+            <span class="mon">M</span><span class="exp">E</span><span class="ang">A</span><span class="node">N</span> Stack based web application
+        </section>
+        <ng-view></ng-view>
+    </div>
+    <hr class="aboutbreak">
+    <div id="about">
+        <div class="content c1">
+            <div class="backImg i1 mt-5"><img src="images/glasses.png" alt=""></div>
+            <p>E-commerce minimal viable product(MVP) based on MEAN Stack</p>
+        </div>
+        <div class="content c2">
+            <div class="backImg i2 mr-2"><img src="images/responsive.png" alt=""></div>
+            <p>Responsive web design</p>
+        </div>
+        <div class="content c1">
+            <div class="backImg i1"><img width="500" src="images/admin.png" alt=""></div>
+            <p>Isolated admin panel for data management</p>
+        </div>
+        <div class="content c2">
+            <div class="backImg i2 mr-2"><img src="images/security.png" width="600" alt=""></div>
+            <p>Encryption and session management</p>
+        </div>
+    </div>
+</body>
+</html>
