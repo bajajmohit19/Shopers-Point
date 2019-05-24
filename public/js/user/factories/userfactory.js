@@ -1,7 +1,7 @@
 userModule.factory('userfactory',['$http','$q','REGISTER_URL','LOGIN_URL',($http,$q,REGISTER_URL,LOGIN_URL)=>{
     return {
         register(userObject){
-            console.log('inside factory');
+            //console.log('inside factory');
             let defer = $q.defer();
             $http.post(REGISTER_URL,userObject).then(data=>{
                 defer.resolve(data);

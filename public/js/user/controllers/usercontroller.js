@@ -2,7 +2,7 @@ userModule.controller('userctrl',['$scope','userfactory','$window','$timeout',($
     $scope.user={userid:'',username:'',gender:'male',email:'',mobileno:'',pwd:''};
     $scope.isErr = false;
     $scope.doRegister=()=>{
-        console.log('inside Controller',$scope.user);
+        //console.log('inside Controller',$scope.user);
         angular.forEach($scope.user,(value,key)=>{
             if(value == '' || !value){
                 $scope.notification = 'Please fill all details';
@@ -11,14 +11,14 @@ userModule.controller('userctrl',['$scope','userfactory','$window','$timeout',($
         if(!$scope.notification){
             const promise = userfactory.register($scope.user);
             promise.then(data=>{
-                console.log('reg is', data);
+                //console.log('reg is', data);
                 $scope.reg = data;
                 $scope.isErr = false;
                 $timeout(()=>{
                     $scope.isErr = true;
                 },5000);
             },err=>{
-                console.log('In err',err);
+                //console.log('In err',err);
                 $scope.err = err;
                 $scope.reg = {};
                 $scope.isErr = true;

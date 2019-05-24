@@ -9,7 +9,7 @@ adminModule.controller('adminctrl',['$scope','adminfactory','$window',($scope,ad
         else{
             const promise = adminfactory.login($scope.admin);
             promise.then(data=>{
-                console.log(data);
+                //console.log(data);
                 //$scope.data = data;
                 $scope.isErr = false;
                 if(data.data.token){

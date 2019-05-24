@@ -12,7 +12,7 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
                     angular.forEach($scope.products,(product,key)=>{
                         let promise = admindashboardfactory.fetchimage(product.img);
                         promise.then(data=>{
-                            console.log('Image isssss ',data);
+                            //console.log('Image isssss ',data);
                             product.img = data.data.image;
                         },err=>{
                             console.log(err);
@@ -30,12 +30,12 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
                     angular.forEach($scope.orders,(order,key)=>{
                         let promise = admindashboardfactory.fetchIds(order.pid,order.uid);
                         promise.then(data=>{
-                            console.log('order data is ',data);
+                            //console.log('order data is ',data);
                             order.product = data.data.product;
                             order.price = data.data.price * order.quantity;
                             order.user = data.data.user;
                         },err=>{
-                            console.log(err);
+                            //console.log(err);
                         })
                     })
             }
@@ -62,24 +62,24 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
             url: '/upload',
             data: {file: file, product:$scope.product}
         }).then(resp => {
-            console.log('Success ', resp);
+            //console.log('Success ', resp);
         },err => {
-            console.log('Error status: ' + err);
+            //console.log('Error status: ' + err);
         }, evt => {
             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+            //console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
         });
     };
     $scope.addProduct = ()=>{
-        console.log($scope.forms);
+        //console.log($scope.forms);
         if($scope.forms.uploadform.$valid){
-            console.log('scope is ', $scope);
+            //console.log('scope is ', $scope);
             $scope.upload($scope.forms.file);
             //console.log($scope.product);
             let promise = admindashboardfactory.addProduct($scope.product);
             promise.then(data=>{
                 if(data){
-                    console.log('data is ',data);
+                    //console.log('data is ',data);
                     if(data.data.status == 'S'){
                         $scope.clear();
                         alert('Product Added');
@@ -87,7 +87,7 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
                     }
                 }
             },err=>{
-                console.log('Error is ',err);
+                //console.log('Error is ',err);
             })
         }
         else alert('Fill all details');
@@ -111,25 +111,25 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
         });
         $scope.editable.price = parseInt($scope.editable.price);
         $scope.editable.quantity = parseInt($scope.editable.quantity);
-        console.log($scope.editable);
+        //console.log($scope.editable);
         $scope.update = $scope.editable;
     };
     $scope.updateProduct = ()=>{
         if($scope.forms.updateform.$valid){
-            console.log('scope is ', $scope);
+            //console.log('scope is ', $scope);
             $scope.upload($scope.forms.file);
             //console.log($scope.product);
             let promise = admindashboardfactory.updateProduct($scope.editable);
             promise.then(data=>{
                 if(data){
-                    console.log('updated data is ',data);
+                    //console.log('updated data is ',data);
                     if(data.data.status == 'S'){
                         alert('Product Updated');
                         fetchAll();
                     }
                 }
             },err=>{
-                console.log('Error is ',err);
+                //console.log('Error is ',err);
             })
         }
         else alert('Fill all details');
@@ -146,7 +146,7 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
             let _id = tr[0].innerText;
             let promise = admindashboardfactory.deleteProduct({_id});
             promise.then(data=>{
-                console.log(data);
+                //console.log(data);
                 if(data.data.status == 'S'){
                     $scope.notifications.popup = 'Product deleted';
                     fetchAll();
@@ -169,7 +169,7 @@ dashboardModule.controller('admindashboardctrl',['$scope','$window','Upload','ad
             let _id = tr[0].innerText;
             let promise = admindashboardfactory.deleteOrder({_id});
             promise.then(data=>{
-                console.log(data);
+                //console.log(data);
                 if(data.data.status == 'S'){
                     $scope.notifications.popup = 'Product deleted';
                     fetchAll();

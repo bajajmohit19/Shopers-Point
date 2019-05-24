@@ -8,11 +8,9 @@ userModule.factory('userdashboardfactory',['$http','FETCH_PRODUCTS','FETCH_IMAGE
         },
         detectUser(id){
             let url = CHECK_USER + '?id='+id;
-            console.log(url);
             return $http.get(url);
         },
         checkProduct(id){
-            console.log(id);
             return $http.post(CHECK_PRODUCT,id);
         },
         buy(id,uid){
