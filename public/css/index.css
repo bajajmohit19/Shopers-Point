@@ -333,6 +333,7 @@ select:-webkit-autofill:focus {
         background-size: cover;
     }
     .reg{
+        z-index: 2;
         background: rgba(0, 0, 0, 0.6);
         position: relative;
         top:0px;
@@ -341,5 +342,8 @@ select:-webkit-autofill:focus {
         max-width:100%;
         text-align: center;
         padding:3vh 2vw;
+    }
+    #about{
+        padding-top:100vh;
     }
 }
