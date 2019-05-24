@@ -81,6 +81,8 @@ nav{
 .img{
     height: 60%;
     width: 100%;
+    background: url('../images/placeholder.png');
+    background-size: cover;
 }
 .productCard:hover img{
     height:100%;
