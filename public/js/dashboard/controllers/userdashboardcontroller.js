@@ -54,7 +54,7 @@ userModule.controller('userdashboardctrl',['$scope','$window','userdashboardfact
         let backup={};
         //console.log(target.children[1].innerText);
         $scope.productDetails.pid = target.children[0].innerText;
-        $scope.productDetails.img = target.children[1].children[0].src;
+        //$scope.productDetails.img = target.children[1].children[0].src;
         let promise = userdashboardfactory.checkProduct({_id:$scope.productDetails.pid});
         promise.then(data=>{
             //console.log('Check product data is ',data);
