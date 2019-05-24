@@ -50,6 +50,9 @@ userModule.controller('userdashboardctrl',['$scope','$window','userdashboardfact
         else if(e.target.tagName == 'SPAN'||e.target.tagName == 'H2'||e.target.tagName == 'P'){
             target = e.target.parentNode;            
         }
+        else if(e.target.tagName == 'DIV'){
+            target = e.target.parentNode; 
+        }
         else target = e.target;
         let backup={};
         //console.log(target.children[1].innerText);
