@@ -56,6 +56,8 @@ nav{
     min-height:250px;
     border: 1px solid lightgrey;
     margin-right:2vw;
+    background: url('../images/placeholder.png');
+    background-size: cover;
 }
 .productBio{
     flex:1;
