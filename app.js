@@ -8,7 +8,7 @@ app.use(require('./utils/adminFirstTimeChecker'));
 app.use('/',require('./api/user/userRoutes'));
 app.use(require('./utils/tokenMiddleware'));
 app.use('/',require('./api/admin/adminRoutes'));
-app.listen(1234,()=>{
+app.listen(process.env.PORT || '1234',()=>{
     console.log('Server Start');
     const adminOperations = require('./db/helpers/adminOperations');
     adminOperations.findAdmin();
