@@ -2,6 +2,7 @@ const userRoutes = require('express').Router();
 const userOperations = require('../../db/helpers/userOperations');
 const encrypt = require('../../utils/encryption');
 userRoutes.post('/register',(req,res)=>{
+    console.log(req.body)
     let uid = req.body.userid;
     let pwd = encrypt.encryption(req.body.pwd);
     let username = req.body.username;
@@ -31,7 +32,7 @@ userRoutes.post('/adminlogin',(req,res)=>{
 userRoutes.get('/checkuser',(req,res)=>{
     let id = req.query.id;
     console.log(id);
-    userOperations.findUser({_id:id},res);
+    userOperations.findUser({_id : id } , res);
 });
 userRoutes.post('/checkproduct',(req,res)=>{
     let id = req.body;
@@ -50,6 +51,7 @@ userRoutes.post('/updateprofile',(req,res)=>{
     userOperations.updateProfile(id,obj,res);
 });
 userRoutes.post('/changepassword',(req,res)=>{
+    console.log(req.body)
     let id = req.body.id;
     let obj = {old:req.body.old,new:encrypt.encryption(req.body.new)};
     userOperations.changePassword(id,obj,res);
